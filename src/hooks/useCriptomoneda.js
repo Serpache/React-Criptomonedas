@@ -24,8 +24,6 @@ const Select = styled.select`
 
 const useCriptomoneda = (label, stateInicial, opciones) => {
 
-    console.log(opciones);
-
     const [ state, actualizarState ] = useState(stateInicial);
 
     const SeleccionarCripto = () => (
