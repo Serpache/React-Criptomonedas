@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import useMoneda from '../hooks/useMoneda'
 import useCriptomoneda from '../hooks/useCriptomoneda'
+import Error from './Error'
 
 
 
@@ -67,13 +68,15 @@ const Formulario = () => {
         guardarError(false);
 
         //Pasar datos a componente principal
-        
+
     }
 
     return ( 
         <form
             onSubmit={cotizarMoneda}
         >
+            {error ? <Error mensaje="Todos los campos son obligatorios" /> : null}
+
             <SelectMonedas />
             <SelectCripto />
             <Boton
